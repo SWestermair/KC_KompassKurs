@@ -1,0 +1,60 @@
+html,
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+:root {
+    --pageBG: #00909E;
+
+    --c1: #864AF9;
+    --c2: #C21292;
+    --c3: #176B87;
+    --c4: #F99417;
+    --c5: #161D6F;
+    --c6: #C4FB6D;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--pageBG);
+}
+
+
+.todoListRow {
+    background:
+        radial-gradient(circle at left, var(--c1), var(--c2), var(--c3)),
+        radial-gradient(circle at right, var(--c4), var(--c5), var(--c6));
+
+    background-size: 400% 400%;
+
+    -webkit-animation: movingGradient 5s ease-in-out infinite;
+
+    box-shadow: 15px 40px 150px rgb(140, 200, 50);
+
+    border-radius: 75px;
+
+    /*setzt eine fixe maximale Höhe für die Reihe */
+    max-height: 500px;
+
+    /* wenn die max Höhe erreicht ist erlaubt das vertikales scrollen */
+    overflow-y: auto;
+}
+
+@-webkit-keyframes movingGradient {
+    0% {
+        background-position: 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 70% 0%;
+    }
+}
